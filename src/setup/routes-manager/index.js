@@ -6,6 +6,7 @@ import { SignUp } from '../../pages/login/signUp';
 import { Accueil } from '../../pages/accueil';
 import { Welcome } from '../../pages/welcome';
 import Sondage from '../../pages/sondage/creerSondagee';
+import Analyse from '../../pages/analyse';
 
 function Routage() {
     return( 

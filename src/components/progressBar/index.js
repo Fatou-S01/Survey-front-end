@@ -1,9 +1,11 @@
 import React from 'react';
 import "./progressBar.css";
+import {useNavigate,useParams} from 'react-router-dom';
 
 
 
 function ProgressBar() {
+  const navigate = useNavigate();
   return(
     <>
         <div>
@@ -14,7 +16,7 @@ function ProgressBar() {
                <p className='p'>Aperçue</p>
                <p className='p'>Envoie du sondage
                </p>
-               <p className='p'>Analyse des résultats</p></div>
+               <p className='p' onClick={() => navigate('/analyse')}>Analyse des résultats</p></div>
                
         </div>
         </div>
