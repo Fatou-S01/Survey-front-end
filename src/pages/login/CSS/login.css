@@ -1,0 +1,30 @@
+#logo2{
+  color: #2A9E9E;
+  font-size: 20px;
+}
+#logo1{
+  font-size: 20px;
+}
+.sign_in{
+  display: flex;
+  justify-content: center;
+}
+.sign_in1{
+border: solid 1px #2A9E9E;
+}
+.form1{
+  display: flex;
+  flex-direction: column;
+}
+.label4{
+  margin-top: 1rem;
+}
+#login_button{
+  margin-top: 2rem;
+  width: 45%;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #2A9E9E;
+  border: none;
+  margin-left: 30%;
+}
