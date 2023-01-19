@@ -4,12 +4,11 @@ import { NewQuestion } from "../typeQuestion/newquestion";
 import { Banque } from "../banqueDonnees";
 import Grid from '@mui/material/Grid';
 import { Aperçu } from "../aperçu";
-import { Analyse } from "../analyse";
 import { Send } from "../send/send";
 import { ProgressBar } from "../progressBar";
 import { next1 } from "../../themeProgress";
 import { prev1 } from "../../themeProgress";
-
+import Analyse from "../../pages/analyse";
 
 
 var numberQ = 0;
