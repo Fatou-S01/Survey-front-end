@@ -16,7 +16,7 @@ function ProgressBar() {
                <p className='p'>Aperçue</p>
                <p className='p'>Envoie du sondage
                </p>
-               <p className='p' onClick={() => navigate('/analyse')}>Analyse des résultats</p></div>
+               <p className='p' onClick={() => navigate('/1/analyse')}>Analyse des résultats</p></div>
                
         </div>
         </div>
