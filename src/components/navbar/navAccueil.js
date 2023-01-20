@@ -5,7 +5,7 @@ import { useLoaderData, useLocation, useNavigate,Link } from 'react-router-dom';
 
 
 
-function Navbar(props){
+function NavbarAccueil(props){
 
   $(document).ready(function(){
     $('.link').click(function(){
@@ -26,15 +26,16 @@ function Navbar(props){
         </a>
 
         <div className="nav__link hide">
-          <Link  className='link focus1'>Créer Sondage</Link>
-          <Link  className='link' >Mes Sondages</Link>
+          <Link  className='link focus1'>Accueil</Link>
+          <Link  className='link' to = '/inscription'>Créer sondage</Link>
           <Link className='link'>Répondre à un sondage</Link>
          
         </div>
-            <a href="/" class="btn ">Déconnexion</a>
+            <a href="/connexion" class="btn">Connexion</a>
+            <a href="/inscription" class="btn ">Inscription</a>
       </nav>
 
     </>
     );
 }
-export{Navbar};
+export{NavbarAccueil};
