@@ -4,6 +4,8 @@ import "./analyse.css";
 import {Graphique} from "./graphique";
 import { TableauResultat } from './tableauResultats';
 import { TableauStatistique } from './tableauStatistique';
+import {formatData} from './data'
+
 
 function AnalyseGraphique(){
     const params = useParams()
@@ -28,6 +30,7 @@ function AnalyseGraphique(){
     {datas.map( (question,index)=> <p key={question[0].id_question} className="mb-5 row">
         <div className='col'>
         <h4 className='mb-3'>{index +1}-  {question[0].intitule_question}</h4>
+        <div>Reponses  {`(${formatData(question).nReponsesTot})`}</div>
         <Graphique datasets={question}/>
         </div>
         <div className='col my-auto'>

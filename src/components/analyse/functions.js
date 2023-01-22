@@ -113,4 +113,4 @@ function ecart_type(arr){
  return Math.sqrt(sum / arr.length)
 }
 
-export{manageDatasAndOptions}
+export{manageDatasAndOptions,moyenne,median,ecart_type}
