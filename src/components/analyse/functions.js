@@ -13,11 +13,10 @@ import {
     BarController
   } from 'chart.js';
   import { Bar,Pie ,Line} from 'react-chartjs-2';
-
+import {formatData} from './data'
   
  
-  // export const x = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange','madre']//a prendre avec axios
-  // export const y = [12, 19, 3, 5, 2, 3,8]//a prendre avec axios
+
 
   export function generateRandomColors(n){
     let randomColors = [];
@@ -62,19 +61,21 @@ function manageDatasAndOptions(datasets){
     };
     
     const data = {
-    labels: Object.keys(datasets.reponses),
+    labels:formatData(datasets).optionsReponses,
     datasets: [
       {
-        data: Object.values(datasets.reponses),
-        backgroundColor: generateRandomColors(Object.keys(datasets.reponses).length),
+        data: formatData(datasets).nReponses,
+        backgroundColor: generateRandomColors(formatData(datasets).optionsReponses.length),
         borderColor: '#A3A3A3',
         borderWidth: 1,
       },
     ],
     };
-
+  console.log(data)
     return {options,data}
 }
+
+
 
 function moyenne(data){
     var sum = 0;

@@ -19,7 +19,6 @@ function Graphique(props){
 
 const [graphType,changeGraphType] = useState("Bar")
 const {options,data} = manageDatasAndOptions(props.datasets)
-
 if (graphType == 'Bar') {
   return (
     <div className='graph'>
