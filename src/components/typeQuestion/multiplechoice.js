@@ -38,7 +38,7 @@ function MultipleChoice({value1, optionValue1, optionValue2,style}){
   
       </RadioGroup>
     </FormControl>
-</div>
+    </div>
     </>
   )
 }

@@ -15,8 +15,8 @@ import { FormSondage } from '../../pages/FormSondage';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import { Modeles } from '../../pages/modelesPersonnalisables';
 import { TemplateView } from '../../pages/modelesPersonnalisables/templateView';
-/*import { RepondreSondage } from '../../pages/repondreSondage';
-import { AnswerSondage } from '../../pages/repondreSondage/index1';*/
+import { RepondreSondage } from '../../pages/repondreSondage';
+import { AnswerSondage } from '../../pages/repondreSondage/index1';
 
 function Routage() {
   const client = new QueryClient();
@@ -36,7 +36,7 @@ function Routage() {
           <Route path='/Analyse/:id_user/:titre_sondage/:id_sondage' element = {<Analyse/>}/>
           <Route path='/Creer_sondage/:id_user' element = {<FormSondage/>}/>
           <Route path='/modeles_perso/:id_user' element = {<Modeles/>}/>
-          
+          <Route path='/repondreSondage/:id_sondage' element = {<AnswerSondage/>}/>
           <Route path='/modeles_perso/view/:titre_template/:id_template/:id_user' element = {<TemplateView/>}/>
 
           
