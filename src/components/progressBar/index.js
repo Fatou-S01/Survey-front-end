@@ -3,18 +3,18 @@ import "./progressBar.css";
 
 
 
-function ProgressBar() {
+function ProgressBar({bar_value}) {
   return(
     <>
         <div>
-        <div className = 'container'>
-            <div id='progress-container'></div>
+        <div className = 'container901'>
+            <div id='progress-container' style={{width: bar_value,display: 'flex',flexDirection: 'row'}}></div>
             <div className='dfg'>
-               <p className='p'>Création du sondage</p>
-               <p className='p'>Aperçue</p>
-               <p className='p'>Envoie du sondage
+               <p className='partie221'>Création du sondage</p>
+               <p className='partie221'>Aperçue</p>
+               <p className='partie221'>Envoie du sondage
                </p>
-               <p className='p'>Analyse des résultats</p></div>
+               <p className='partie221'>Analyse des résultats</p></div>
                
         </div>
         </div>

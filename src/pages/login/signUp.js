@@ -18,18 +18,18 @@ function SignUp(){
 
  const handleSubmit = (event) => {
       event.preventDefault()
-     /* axios.post("http://localhost:8000/api_user/",
+      axios.post("http://localhost:4030/api/auth/signup",
       { 
-          first_name: first_name,
-          last_name: last_name,
-          mail: mail,
+          firstname: first_name,
+          lastname: last_name,
+          email: mail,
           password: password,
-          domaine:domaine,
+          domaineActivite:domaine,
           username: username,
       }).then((response) => {
         SetUser(response.data);
 
-      });*/
+      });
 
       nav4('/connexion');
 
@@ -41,8 +41,8 @@ function SignUp(){
     })*/
 
     return(
-    <div style = {{marginTop: '2rem'}}>
-      <div> <h2 className='sign_in' ><i id='logo2'>Faki</i><i id='logo1'>Survey</i></h2></div>
+    <div style = {{marginTop: '1rem'}}>
+      <div> <h2 className='sign_in' ><i id='logo228' style= {{fontSize:'25px'}}>Faki</i><i id='logo118' style= {{fontSize:'25px'}}>Survey</i></h2></div>
       <div className='sign_in'>
       <div className='sign_in1'>
       <form onSubmit={handleSubmit} className='form1' style = {{padding:'2rem'}}>
@@ -51,28 +51,29 @@ function SignUp(){
 
           <div style = {{display: 'flex', flexDirection: 'column'}}>
               <label>Prénom</label>
-              <input required type='text'   value={last_name} onChange={(e) => SetLast_name(e.target.value)}/>
+              <input required type='text'   value={last_name} onChange={(e) => SetLast_name(e.target.value)} className='input_log'/>
           </div>
 
           <div style = {{display: 'flex', flexDirection: 'column', marginLeft:'2rem'}}>
               <label>Nom</label>
-              <input required type='text'  value={first_name} onChange={(e) => SetFirst_name(e.target.value)}/>
+              <input required type='text'  value={first_name} onChange={(e) => SetFirst_name(e.target.value)} className='input_log'/>
           </div>
 
           </div>
           <label className='label4'>Nom d'utilisateur</label>
-          <input required type='text'  value={username} onChange={(e) => SetUsername(e.target.value)}/>
+          <input required type='text'  value={username} onChange={(e) => SetUsername(e.target.value)} className='input_log'/>
           <label className='label4'>Adresse mail</label>
-          <input required type='text'  value={mail} onChange={(e) => SetMail(e.target.value)}/>
+          <input required type='text'  value={mail} onChange={(e) => SetMail(e.target.value)} className='input_log'/>
           <label className='label4'>Mot de passe</label>
-          <input required type='password'  value={password} onChange={(e) => SetPassword(e.target.value)}/>
+          <input required type='password'  value={password} onChange={(e) => SetPassword(e.target.value)} className='input_log'/>
           <label className='label4'>Domaine</label>
-          <input type='text'  value={domaine} onChange={(e) => SetDomaine(e.target.value)}/>
+          <input type='text'  value={domaine} onChange={(e) => SetDomaine(e.target.value)} className='input_log'/>
           <input type='submit' value='Inscription' id='login_button'/>
 
       </form>
       <div style = {{display: 'flex', flexDirection: 'row',marginLeft:'5%'}}>
-          <p>Vous avez déjà un compte ?</p><Link style = {{color:'#2a9e9e'}} to = '/Connexion'>Connectez-vous ici</Link>
+          <p style={{marginTop:'0px'}}>Vous avez déjà un compte ?</p>
+          <Link style = {{color:'#2a9e9e'}} to = '/Connexion'>Connectez-vous ici</Link>
       </div>
       </div>
       </div>

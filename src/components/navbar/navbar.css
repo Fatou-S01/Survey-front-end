@@ -1,5 +1,5 @@
 
-.nav {
+.nav72 {
   display: flex;
   align-items: center;
   color: black;
@@ -15,10 +15,11 @@
 .link {
   text-decoration: none;
   font-size: 15px;
+  color: #333
 
 }
 
-.logo {
+.logo45 {
   color: black;
   text-decoration: none;
   
@@ -40,7 +41,7 @@
   background-color: black;
 }
 
-.nav__link {
+.nav__link1 {
   position: fixed;
   width: 94%;
   top: 5rem;
@@ -48,30 +49,32 @@
   margin-left: 15%;
 }
 
-.nav__link a {
+.nav__link1 a {
   display: block;
   text-align: center;
   padding: 5px 0;
 }
 
-.nav__link a:hover {
+.nav__link1 a:hover {
   color: #2A9E9E;
 }
 
 .hide {
   display: none;
 }
-.btn{
+.btn402{
   text-decoration: none;
-  margin-left: 20%;
   color: #2A9E9E;
-  border: solid 1px;
+  border: solid 1px #2A9E9E;
   border-radius: 30px;
   padding: 8px;
 }
-
+.btn402:hover{
+  background-color: #2A9E9E;
+  color: #fff
+}
 @media screen and (min-width: 600px) {
-  .nav__link {
+  .nav__link1 {
     display: block;
     position: static;
     width: auto;
@@ -79,7 +82,7 @@
     background: none;
   }
 
-  .nav__link a {
+  .nav__link1 a {
     display: inline-block;
     padding: 5px 15px;
   }

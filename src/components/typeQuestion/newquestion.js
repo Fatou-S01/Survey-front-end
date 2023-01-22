@@ -1,6 +1,9 @@
 import React from 'react';
 import { Slider1 } from "../typeQuestion/slider";
 import './CSS/typeQuestion.css';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
 import '../question/question.css';
 import Rating from '@mui/material/Rating';
 import Slider from '@mui/material/Slider';
@@ -18,10 +21,16 @@ import { ZoneTexte } from "../typeQuestion/zoneTexte";
 import { Option } from '../typeQuestion/multiplechoice';
 import { FaTrash } from "react-icons/fa";
 import { FaRegEdit} from "react-icons/fa";
+import axios  from 'axios';
+import {useNavigate,useParams} from 'react-router-dom';
+import { ViewAperçu } from '../ViewAperçu';
 
 
 var numberO = 0;
 function NewQuestion(){
+
+  const params = useParams();
+
   const [type, setType] = React.useState('zoneTexte');
   const [active, setActive] = React.useState(0);
   const [input_value, SetInput_value] = React.useState("");
@@ -36,6 +45,14 @@ function NewQuestion(){
   const [option1_value, SetOption1_value] = React.useState([]);
   const [option2_value, SetOption2_value] = React.useState([]);
 
+  /*obligatoire*/
+  const [required, setRequired] = React.useState(false);
+  const handleChangeR = (event) => {
+    setRequired(event.target.checked);
+  };
+
+
+
   /*Modifier*/
   const [update, setUpdate] = React.useState(0);
 
@@ -47,12 +64,52 @@ function NewQuestion(){
   const handleChange = (event) => {
     setType(event.target.value);
   };
+
+  /*post Question*/
+  const saveQuestion = () => {
+    const list_option = [option1_value, option2_value]
+    if(type == 'zoneTexte' || type == 'rate' || type == 'slider' || type == 'datepicker'){
+      axios.post("http://127.0.0.1:4030/api/questions/createQuestion",
+      { 
+          sondageId: params.id_sondage,
+          intituleQuestion: (type == "zoneTexte" ? input_value : type == 'rate' ? rate_value : type == 'slider' ? 
+          slider_value : type == 'datepicker' ? date_value : ""
+          ),
+          typeQuestion: type,
+          obligatoire: required,
+      }).then((response) => {});
+  }
+  else{
+    axios.post("http://127.0.0.1:4030/api/questions/createQuestion",
+      { 
+          sondageId: params.id_sondage,
+          intituleQuestion: choice_value,
+          typeQuestion: 'Multiple Choice',
+          obligatoire: required,
+      }).then((response) => {
+        for(let i = 0; i < list_option.length; i++){
+          axios.post("http://127.0.0.1:4030/api/questions/createQuestion",
+          { 
+              questionId: (response.data).createdQuestion._id,
+              intituleOption: list_option[i],
+          })
+        }
+
+      });
+  }
+  setActive(1);
+    }
+    
+    
+
+
   return(
     <>
     {
-      active == 0 ? <div className='div_input'>
+      active == 0 ? <div> <div className='div_input'>
       {type == 'zoneTexte' ? <input className='question' value={input_value} onChange={(e) => {SetInput_value(e.target.value)}}></input> :  type == 'rate' ? 
       <>
+      
       <div className='type'>
       <input className='question' value={rate_value} onChange={(e) => {setRateValue(e.target.value)}}></input>
       <Rating
@@ -112,10 +169,15 @@ function NewQuestion(){
 
     </div>
     <div style= {{marginTop: '40px', marginRight: '10px'}}>
-    <button onClick={() => {setActive(1)}} style= {{color: '#2a9e9e', backgroundColor: '#fff', borderStyle: 'none',borderRadius: '20px', height: '25px'}}>Enregistrer</button>
+    <button onClick={saveQuestion} style= {{color: '#2a9e9e', backgroundColor: '#fff', borderStyle: 'none',borderRadius: '20px', height: '25px'}}>Enregistrer</button>
     </div>
-    
     </div>
+     <div>
+     <FormGroup >
+       <FormControlLabel control={<Switch onChange={handleChangeR}/>} label="Obligatoire" />
+     </FormGroup>
+     </div>
+     </div>
     : (active == 1 && type == 'zoneTexte') ? <><ZoneTexte value={input_value} style={{display: update == 1 ? "none": "visible"}}/>
     <FaRegEdit onClick={() => {setActive(0)}} style={{display: update == 1 ? "none": "visible", color:'#333',marginTop:'10px'}} />
     <FaTrash onClick={() => {setUpdate(1)}} style={{display: update == 1 ? "none": "visible",color:'#333',marginLeft: '6px',marginTop:'10px'}}/>

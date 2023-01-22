@@ -1,14 +1,14 @@
 
-#titre_sondage{
+#titre_sondage404{
   color: #2A9E9E;
   font-size: 20px;
   margin-top: 5px;
   margin-left: 5px;
 }
-#terminer{
+/*#terminer404{
   /* margin-left: 25rem;
    /*margin-top: 3.5rem;*/
-   background-color: #2A9E9E;
+   /*background-color: #2A9E9E;
    color: white;
    border-radius: 10px;
    width: 7rem;
@@ -16,7 +16,7 @@
    font-size: 18px;
    height: 1.8rem;
    
- }
+ }*/
  #terminer_plus{
    margin-top: 2rem;
    display: flex;
@@ -39,7 +39,7 @@
    height: 40px;
 
  }
-#container{
+#container542{
   margin-right: 5rem;
   background-color: #F5F5F5;
   padding-top: 0.5rem;

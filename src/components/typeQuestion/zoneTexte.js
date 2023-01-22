@@ -6,7 +6,7 @@ function ZoneTexte({value, style}){
     <>
     <div style={style}>
       <p >{value}</p>
-    <input value={""} className='question'></input>
+    <input value={""} className='question' required></input>
     </div>
 
    

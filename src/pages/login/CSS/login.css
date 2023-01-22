@@ -1,8 +1,8 @@
-#logo2{
+#logo228{
   color: #2A9E9E;
   font-size: 20px;
 }
-#logo1{
+#logo118{
   font-size: 20px;
 }
 .sign_in{
@@ -10,7 +10,9 @@
   justify-content: center;
 }
 .sign_in1{
-border: solid 1px #2A9E9E;
+/*border: solid 1px #2A9E9E;*/
+border-radius: 5px;
+box-shadow: 2px 1px 22px 1px rgba(42,158,158,0.23);
 }
 .form1{
   display: flex;
@@ -20,11 +22,18 @@ border: solid 1px #2A9E9E;
   margin-top: 1rem;
 }
 #login_button{
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 45%;
   border-radius: 20px;
   color: #fff;
   background-color: #2A9E9E;
   border: none;
   margin-left: 30%;
+  height: 25px;
+  font-weight: bold;
+}
+.input_log{
+  height: 22px;
+  border-radius: 5px;
+  border: solid 1px #2a9e9e;
 }
