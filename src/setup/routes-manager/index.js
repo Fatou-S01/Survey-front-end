@@ -7,6 +7,7 @@ import { Accueil } from '../../pages/accueil';
 import { Welcome } from '../../pages/welcome';
 import Sondage from '../../pages/sondage/creerSondagee';
 import Analyse from '../../pages/analyse';
+import { PartageSondage } from '../../components/PartageSondage';
 
 function Routage() {
     return( 
