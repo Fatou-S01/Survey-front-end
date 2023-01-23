@@ -358,3 +358,50 @@ h6 {
   margin-left: 50px;
  
 }
+
+
+
+
+
+#theme1{
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #2A9E9E;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.theme2{
+  padding: 1.5rem;
+  border: solid 1px #2A9E9E;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  background-color: #F5F5F5;
+}
+.theme2:hover{
+  color: #2A9E9E;
+}
+#theme2_plus{
+  font-size:x-large;
+  color: #2A9E9E;
+}
+.template1{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+ 
+}
+#search{
+  width: 50%;
+}
+.Card444{
+  margin-top: 3rem;
+}
+.card1{
+  box-shadow: -3px -3px 18px 3px rgba(217,217,217,0.45);
+}
+#image_template{
+
+  height: 100%;
+}
