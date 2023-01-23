@@ -49,7 +49,7 @@ import {formatData} from './data'
     LineController,
     BarController
   );
-
+//functions for  charts
 function manageDatasAndOptions(datasets){
   const options = {
     indexAxis: 'x',
@@ -71,12 +71,11 @@ function manageDatasAndOptions(datasets){
       },
     ],
     };
-  console.log(data)
     return {options,data}
 }
 
 
-
+//functions for statistique
 function moyenne(data){
     var sum = 0;
  
@@ -112,5 +111,6 @@ function ecart_type(arr){
  let variance = sum / arr.length
  return Math.sqrt(sum / arr.length)
 }
+
 
 export{manageDatasAndOptions,moyenne,median,ecart_type}

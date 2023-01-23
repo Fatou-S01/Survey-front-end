@@ -2,9 +2,9 @@ import {React, useState } from 'react';
 
 function formatDataForStatistique(data){
     let datasets = []
-    let optionsReponsesInNumber =  Array.from({ length: formatData(data).optionsReponses.length }, (value, index) => index);
-    const minimum = formatData(data).nReponses.indexOf(Math.min(...formatData(data).nReponses))
-    const maximum = formatData(data).nReponses.indexOf(Math.max(...formatData(data).nReponses))
+    let optionsReponsesInNumber =  Array.from({ length: formatData(data).optionsReponses.length }, (value, index) => index+1);
+    const minimum = formatData(data).nReponses.indexOf(Math.min(...formatData(data).nReponses))+1
+    const maximum = formatData(data).nReponses.indexOf(Math.max(...formatData(data).nReponses))+1
     optionsReponsesInNumber.map((e,index)=> {
         datasets = datasets.concat(Array.from({ length: formatData(data).nReponses[index]}, (value, index) => index).map((element2)=> {return e}))
     })

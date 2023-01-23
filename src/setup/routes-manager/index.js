@@ -18,6 +18,7 @@ function Routage() {
           <Route path='/connexion' element = {<SignIn/>}/>
           <Route path='/Creer_sondage/:id_user/:titre_sondage' element = {<Sondage/>}/>
           <Route path='/:id_sondage/analyse' element = {<Analyse/>}/>
+          <Route path='/PartageSondage' element = {<PartageSondage/>}/>
           
           
           

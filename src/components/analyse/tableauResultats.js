@@ -10,13 +10,15 @@ function TableauResultat(props){
 									 table-sm">
 			<thead>
 				<tr>
+					<th> Indices</th>
 					<th> Choix Reponses</th>
 					<th> Reponses</th>
 				</tr>
 			</thead>
 			<tbody>
-            {lignes.map( ligne => 
+            {lignes.map( (ligne,index) => 
                 <tr key={ligne[0]}>
+					<td> {index +1}</td>
 					<td> {ligne[0]}</td>
 					<td> {ligne[1]}</td>
 				</tr>
