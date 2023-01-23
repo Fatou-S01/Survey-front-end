@@ -15,3 +15,10 @@ th{
 .graph1{
     width:60%;
 }
+
+.emoji{
+    width:70px;
+}
+.sentiment{
+    font-size: 20px;
+}

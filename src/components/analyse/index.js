@@ -1,4 +1,4 @@
-import {React, useState } from 'react';
+import {React, useState,useRef } from 'react';
 import {useNavigate,useParams} from 'react-router-dom';
 import "./analyse.css";
 import {Graphique} from "./graphique";
@@ -6,10 +6,11 @@ import { TableauResultat } from './tableauResultats';
 import { TableauStatistique } from './tableauStatistique';
 import {formatData} from './data'
 import { AnalyseZoneTexte } from './analyseZoneTexte';
-
+import { jsPDF } from 'jspdf';
 
 function AnalyseGraphique(){
     const params = useParams()
+    
     const datas=[[
         {
             "id_question":1,
@@ -32,7 +33,7 @@ function AnalyseGraphique(){
     {datas.map( (question,index)=> <p key={question[0].id_question} className="mb-5 row">
         <div className='col'>
         <h4 className='mb-3'>{index +1}-  {question[0].intitule_question}</h4>
-        { question[0].type_question=='zoneTexte'? <><div>Reponses  {`(${question[1].length})`}</div><AnalyseZoneTexte datasets= {question[1].join('. ')}/></> : <><div>Reponses  {`(${formatData(question).nReponsesTot})`}</div>
+        { question[0].type_question=='zoneTexte'? <><div>Reponses  {`(${question[1].length})`}</div><AnalyseZoneTexte datasets= {question[1]}/></> : <><div>Reponses  {`(${formatData(question).nReponsesTot})`}</div>
         <Graphique datasets={question}/></> }
         </div>
         {question[0].type_question=='zoneTexte'?<></>: <div className='col my-auto'>
@@ -42,7 +43,6 @@ function AnalyseGraphique(){
        
     </p>)}
         
- 
     </div>)
 
 }
