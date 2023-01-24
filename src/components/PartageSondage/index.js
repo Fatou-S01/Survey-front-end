@@ -14,7 +14,22 @@ function PartageSondage(){
 
       const handleSubmit = (event) => {
         event.preventDefault();
-        //ON DOIT FAIRE LE TRAITEMENT BACKEND ICI ET ENVOYER LE LIEN DU SONDAGE AUX COEDITEURS
+        mails.split(',').map((email,index)=>{
+          axios.get(`http://127.0.0.1:4030/api/users/getUserByMail/${email}` 
+        ).then((res1)=> {
+                axios.put(`http://127.0.0.1:4030/api/sondages/InviteUser/${res1.data.user['_id']}`, 
+                {
+                  "inviteEmail":`${email}`
+                }).then((res2)=> {
+              });
+              axios.get(`http://127.0.0.1:4030/api/email/plain-text-email}`, 
+              {
+                "toemail":`${email}`
+                }).then((res2)=> {
+              });
+        });
+        })
+        
         alert(mails);
         setIsModalOpen(false);
       }

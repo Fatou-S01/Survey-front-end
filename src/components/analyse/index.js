@@ -6,7 +6,6 @@ import { TableauResultat } from './tableauResultats';
 import { TableauStatistique } from './tableauStatistique';
 import {formatData} from './data'
 import { AnalyseZoneTexte } from './analyseZoneTexte';
-import { jsPDF } from 'jspdf';
 
 function AnalyseGraphique(){
     const params = useParams()
